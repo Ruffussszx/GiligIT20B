@@ -17,6 +17,53 @@ public class StackLinkedList {
     
     private Node top;
     
+     public void push (int value) {
+        Node newNode = new Node(value);
+            
+        newNode.next = top;
+            
+        top = newNode;
+        
+        System.out.println(value + " pushed into the stack " );
+    }     
+    
+    public int pop(){
+        
+        if (isEmpty()){
+            System.out.println(" Stack underflow! Stack is empty ");
+            return -1;
+    }
+            int value = top.data;
+            top = top.next;
+            return value;
+            
+    }
+    public int peek(){
+        if (isEmpty()){
+            System.out.println(" Stack is empty! ");
+            return -1;
+        }
+        return top.data;
+    }
+    
+    public void display(){
+        if (isEmpty()){
+            System.out.println(" Stack is empty ");
+            return;
+        }
+        Node current = top;
+        
+        System.out.println(" Stack elements ");
+        
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }    
+    }
+    public boolean isEmpty(){
+        return top == null;
+    }
+    
    public StackLinkedList(){
        top = null;
    }
@@ -44,51 +91,5 @@ public class StackLinkedList {
         stack.display();
         
     }
-    public void push (int value) {
-        Node newNode = new Node(value);
-            
-        newNode.next = top;
-            
-        top = newNode;
-        
-        System.out.println(value + "pushed into the stack" );
-    }     
-    
-    public int pop(){
-        
-        if (isEmpty()){
-            System.out.println("Stack underflow! Stack is empty");
-            return -1;
-    }
-            int value = top.data;
-            top = top.next;
-            return value;
-            
-    }
-    public int peek(){
-        if (isEmpty()){
-            System.out.println("Stack is empty!");
-            return -1;
-        }
-        return top.data;
-    }
-    
-    public void display(){
-        if (isEmpty()){
-            System.out.println("Stack is empty");
-            return;
-        }
-        Node current = top;
-        
-        System.out.println("Stack elements");
-        
-        while (current != null) {
-            System.out.println(current.data);
-            current = current.next;
-        }    
-    }
-    public boolean isEmpty(){
-        return top == null;
-    }
-    
+   
 }
