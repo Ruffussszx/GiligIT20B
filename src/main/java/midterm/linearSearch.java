@@ -17,7 +17,11 @@ public static void main(String[] args){
 
     int result = search(arr, 4);
 
-    System.out.println(result);
-    }
+    if (result>=0) {
+        System.out.println("Found at index:" + result + "=" + arr[result]);
+      } else {
+     System.out.println(result);
+        }
 
+     }
 }
