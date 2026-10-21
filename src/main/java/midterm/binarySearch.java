@@ -26,6 +26,7 @@ public class binarySearch {
         int arr[] = {1, 2, 3, 4, 5,};
         
         int result = search(arr, 4);
+        
         System.out.println(result);
         
       if (result>=0) {
